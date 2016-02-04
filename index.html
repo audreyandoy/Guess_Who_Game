@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Guess Who</title>
+
    <!-- Latest compiled and minified CSS & JS -->
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
@@ -14,8 +15,9 @@
     <div id="Title">
     	<h1>Guess Who?</h1>
     </div>
-        <span id="startBtn">
-            <button id="start" type="button" class="btn btn-default">Press Here to Play!</button>
+        <span id="buttons">
+            <button id="start" type="button" class="btn btn-default" onclick="playGame()">Activate Board</button>
+
         </span>
 
    </div>
@@ -26,93 +28,433 @@
         <div class="centerBlock">
                 <h4>You vs. CPU</h4>
                 <div id="selectedSecrets">
-                    <span id="playerPic" class= "secret" background="";></span>
+                    <span id="playerPic" class= "secret" ></span>
                     <span id="cpuPIC"; class="secret"></span>
                 </div>              
                 </br>
                 
-                    <p>Select a question here:</p>
-                <div id="questions">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                <div id="target"></div>
-                </div>
-             
-            <h4>CPU grid</h4>
-            <div class="Computer">
-                <div class="tr2">
-                    <div id ="c1" class="Cspace" ></div>
-                    <div id= "c2" class="Cspace" ></div>
-                    <div id ="c3" class="Cspace" ></div>
-                    <div id ="c4" class="Cspace" ></div>
-                    <div id ="c5" class="Cspace" ></div>
-                    <div id ="c6" class="Cspace" ></div>
-                </div>
-               <div class="tr2">
-                    <div id ="c7" class="Cspace"  ></div>
-                    <div id= "c8" class="Cspace" ></div>
-                    <div id ="c9" class="Cspace" ></div>
-                    <div id ="c10" class="Cspace" ></div>
-                    <div id ="c11" class="Cspace" ></div>
-                    <div id ="c12" class="Cspace" ></div>
-                </div>
-               <div class="tr2">
-                    <div id ="c13" class="Cspace" ></div>
-                    <div id= "c14" class="Cspace" ></div>
-                    <div id ="c15" class="Cspace" ></div>
-                    <div id ="c16" class="Cspace" ></div>
-                    <div id ="c17" class="Cspace" ></div>
-                    <div id ="c18" class="Cspace" ></div>
-                </div>
-               <div class="tr2">
-                    <div id ="c19" class="Cspace" ></div>
-                    <div id= "c20" class="Cspace" ></div>
-                    <div id ="c21" class="Cspace" ></div>
-                    <div id ="c22" class="Cspace" ></div>
-                    <div id ="c23" class="Cspace" ></div>
-                    <div id ="c24" class="Cspace" ></div>  
-                </div>
+                  
         </div>
         </div>
         </div>                    
          <div id="board" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
             <div class="row">
-                <div id="a" class="col-xs-2" ></div>
-                <div id="b" class="col-xs-2" ></div>
-                <div id="c" class="col-xs-2" ></div>
-                <div id="d" class="col-xs-2" ></div>
-                <div id="e" class="col-xs-2" ></div>
-                <div id="f" class="col-xs-2" ></div>
+                <div id="a" 
+                     class="col-xs-2" 
+                          data-name="2Chainz"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="Y"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="Y"
+                  style="background-image: url(characters/2Chainz.png);">
+               </div>
+                <div id="b" 
+                     class="col-xs-2" 
+                          data-name="50cent"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="Y"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                style="background-image: url(characters/50cent.png);">
+                </div>
+                <div id="c" 
+                     class="col-xs-2" 
+                          data-name="andre3000"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                    style="background-image: url(characters/andre3000.png);">
+                </div>
+                <div id="d" 
+                     class="col-xs-2" 
+                          data-name="BigBoi"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/bigboi.png);">
+                </div>
+                <div id="e" 
+                     class="col-xs-2" 
+                          data-name="Notorious B.I.G"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="N"
+                          data-smiling="N"
+                          data-sunglasses="Y"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/biggie.png);">
+                </div>
+                <div id="f" 
+                     class="col-xs-2" 
+                          data-name="Busta Rhymes"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="N"
+                          data-smiling="Y"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                    style="background-image: url(characters/busta.png);"> 
+               </div>
             </div>
            <div class="row">
-                <div id="g" class="col-xs-2" ></div>
-                <div id="h" class="col-xs-2" ></div>
-                <div id="i" class="col-xs-2" ></div>
-                <div id="j" class="col-xs-2" ></div>
-                <div id="k" class="col-xs-2" ></div>
-                <div id="l" class="col-xs-2" ></div>
+                <div id="g" 
+                     class="col-xs-2" 
+                          data-name="Common"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="N"
+                          data-smiling="Y"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/common.png);">
+                </div>
+                <div id="h" 
+                     class="col-xs-2"
+                          data-name="Drake" 
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/drake.png);">
+                </div>
+                <div id="i" 
+                     class="col-xs-2" 
+                          data-name="E40"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/e40.png);">
+                </div>
+                <div id="j" 
+                     class="col-xs-2" 
+                          data-name="Eminem"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="N"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/eminem.png);">
+                </div>
+                <div id="k" 
+                     class="col-xs-2" 
+                          data-name="Fat Joe"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/fatjoe.png);">
+                </div>
+                <div id="l" 
+                     class="col-xs-2" 
+                          data-name="Jadakiss"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="N"
+                     style="background-image: url(characters/jadakiss.png);">
+                </div>
             </div>
            <div class="row">
-                <div id="m" class="col-xs-2" ></div>
-                <div id="n" class="col-xs-2" ></div>
-                <div id="o" class="col-xs-2" ></div>
-                <div id="p" class="col-xs-2" ></div>
-                <div id="q" class="col-xs-2" ></div>
-                <div id="r" class="col-xs-2" ></div>
+                <div id="m" 
+                     class="col-xs-2" 
+                          data-name="Jay Z"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/jayz.png);">
+                </div>
+                <div id="n" 
+                     class="col-xs-2" 
+                          data-name="J.Cole"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="Y"
+                          data-chains="N"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/jcole.png);">
+                </div>
+                <div id="o" 
+                     class="col-xs-2"
+                          data-name="Kanye West" 
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/kanyewest.png);">
+                </div>
+                <div id="p" 
+                     class="col-xs-2"
+                          data-name="Kendrick Lamar" 
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="N"
+                          data-smiling="Y"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/kendrick.png);">
+                </div>
+                <div id="q" 
+                     class="col-xs-2" 
+                          data-name="Lauryn Hill"
+                          data-male="N"
+                          data-female="Y"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="Y"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/laurynhill.png);">
+                </div>
+                <div id="r" 
+                     class="col-xs-2" 
+                          data-name="Missy Elliot"
+                          data-male="N"
+                          data-female="Y"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="N"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="N"
+                     style="background-image: url(characters/missyelliot.png);">
+                </div>
             </div>
            <div class="row">
-                <div id="s" class="col-xs-2" ></div>
-                <div id="t" class="col-xs-2" ></div>
-                <div id="u" class="col-xs-2" ></div>
-                <div id="v" class="col-xs-2" ></div>
-                <div id="w" class="col-xs-2" ></div>
-                <div id="x" class="col-xs-2" ></div>
+                <div id="s" 
+                     class="col-xs-2" 
+                          data-name="Mos Def"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/mosdef.png);">
+                </div>
+                <div id="t" 
+                     class="col-xs-2" 
+                          data-name="Nas"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/nas.png);">
+                </div>
+                <div id="u" 
+                     class="col-xs-2" 
+                          data-name="Puff Daddy"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="Y"
+                          data-sunglasses="Y"
+                          data-chains="Y"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/puffdaddy.png);">
+                </div>
+                <div id="v" 
+                     class="col-xs-2" 
+                          data-name="Snoop Dogg"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="Y"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="Y"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/snoopextra.png);">
+                </div>
+                <div id="w" 
+                     class="col-xs-2" 
+                          data-name="TuPac"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="N"
+                          data-shorthair="Y"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="N"
+                          data-hat="N"
+                          data-outerwear="N"
+                          data-facialhair="Y"
+                     style="background-image: url(characters/tupac.png);">
+                </div>
+                <div id="x" 
+                     class="col-xs-2" 
+                          data-name="Lil Wayne"
+                          data-male="Y"
+                          data-female="N"
+                          data-longhair="Y"
+                          data-shorthair="N"
+                          data-brunette="Y"
+                          data-mouthclosed="Y"
+                          data-smiling="N"
+                          data-sunglasses="N"
+                          data-chains="Y"
+                          data-hat="Y"
+                          data-outerwear="N"
+                          data-facialhair="N"
+                     style="background-image: url(characters/weezy.png);"></div>
             </div>
         </div>
+
 <!-- Java Script -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
